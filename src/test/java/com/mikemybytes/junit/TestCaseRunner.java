@@ -12,7 +12,7 @@ public class TestCaseRunner {
 
   public static void runTest(Class<?> testClass, String testCase, Duration duration) {
     String threadName = Thread.currentThread().getName();
-    String testCaseIdentifier = testClass.getName() + "#" + testCase;
+    String testCaseIdentifier = testClass.getSimpleName() + "#" + testCase;
 
     System.out.println("[" + threadName + "] START: " + testCaseIdentifier);
 
@@ -23,9 +23,9 @@ public class TestCaseRunner {
       throw new IllegalStateException("Thread '" + threadName + "' has been interrupted");
     }
 
-    // let's pretend it's really a test ;)
+    // let's pretend it's a real test
     Assertions.assertEquals(1, 1);
 
-    System.out.println("[" + threadName + "]    END: " + testCaseIdentifier);
+    System.out.println("[" + threadName + "]   END: " + testCaseIdentifier);
   }
 }
