@@ -12,6 +12,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
+        <!-- allows disabling parallel test execution on demand -->
         <parallelTests>true</parallelTests>
     </properties>
 
